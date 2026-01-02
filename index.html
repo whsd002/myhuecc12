@@ -3,388 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI赋能 京剧新生 - AI促进京剧推广</title>
-    <style>
-        /* 全局样式重置与基础设置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", "SimHei", sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        /* 导航栏样式 */
-        header {
-            background-color: #8B0000; /* 京剧红主色调 */
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav li {
-            margin-left: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd700; /* 金色hover效果 */
-        }
-
-        /* 英雄区样式 */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://img.zcool.cn/community/0169955e89790fa8012165182804e08.jpg') center/cover no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #8B0000;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #ffc107;
-        }
-
-        /* 核心内容区样式 */
-        .container {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            color: #8B0000;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #ffd700;
-            margin: 1rem auto;
-        }
-
-        /* AI应用场景卡片 */
-        .ai-applications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .card:hover .card-img img {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-content h3 {
-            color: #8B0000;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .card-content p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* 优势对比区 */
-        .advantages {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 4rem;
-        }
-
-        .advantage-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .advantage-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .advantage-item i {
-            font-size: 2.5rem;
-            color: #8B0000;
-            margin-bottom: 1rem;
-        }
-
-        .advantage-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: #333;
-        }
-
-        /* 页脚样式 */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-content p {
-            margin-top: 1rem;
-        }
-
-        /* 响应式适配 */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
+    <title>光影新生 - AI与传统皮影戏的融合</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shadowPlay: {
+                            dark: '#2D1E0F',     // 皮影深棕
+                            medium: '#8B5A2B',   // 皮影中棕
+                            light: '#D2B48C',    // 皮影浅棕
+                            accent: '#E63946',   // 点缀红
+                            ai: '#457B9D'        // AI科技蓝
+                        },
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', '"Noto Serif SC"', 'serif'],
+                    },
+                }
             }
-
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
+        }
+    </script>
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             }
-
-            nav li {
-                margin: 0.5rem 1rem;
+            .bg-gradient-shadow {
+                background: linear-gradient(to bottom, rgba(45, 30, 15, 0.8), rgba(45, 30, 15, 0.95));
             }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
+            .scroll-smooth {
+                scroll-behavior: smooth;
             }
         }
     </style>
-    <!-- 引入图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入谷歌字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-chinese bg-stone-50 text-shadowPlay-dark scroll-smooth">
     <!-- 导航栏 -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">AI × 京剧</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#applications">AI应用</a></li>
-                    <li><a href="#advantages">核心优势</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                </ul>
-            </nav>
+    <nav class="fixed w-full bg-shadowPlay-dark/90 text-white z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center gap-2">
+                <i class="fa-solid fa-masks-theater"></i>
+                <span>光影新生</span>
+            </a>
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="hover:text-shadowPlay-light transition-colors">首页</a>
+                <a href="#culture" class="hover:text-shadowPlay-light transition-colors">皮影文化</a>
+                <a href="#ai-integration" class="hover:text-shadowPlay-light transition-colors">AI融合</a>
+                <a href="#cases" class="hover:text-shadowPlay-light transition-colors">案例展示</a>
+                <a href="#experience" class="hover:text-shadowPlay-light transition-colors">互动体验</a>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-white text-xl" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-    </header>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-shadowPlay-dark/95 w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col gap-4">
+                <a href="#home" class="py-2 hover:text-shadowPlay-light transition-colors">首页</a>
+                <a href="#culture" class="py-2 hover:text-shadowPlay-light transition-colors">皮影文化</a>
+                <a href="#ai-integration" class="py-2 hover:text-shadowPlay-light transition-colors">AI融合</a>
+                <a href="#cases" class="py-2 hover:text-shadowPlay-light transition-colors">案例展示</a>
+                <a href="#experience" class="py-2 hover:text-shadowPlay-light transition-colors">互动体验</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- 英雄区（首屏） -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>AI赋能 让京剧焕发新活力</h1>
-            <p>借助人工智能技术，打破传统艺术传播壁垒，让京剧这一国粹走进更多人的生活，实现文化传承与创新发展</p>
-            <a href="#applications" class="btn">探索AI应用场景</a>
+    <!-- 英雄区 -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- 背景图片 -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1076/1920/1080" alt="皮影戏背景" class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-shadow"></div>
+        </div>
+        <!-- 内容 -->
+        <div class="container mx-auto px-4 z-10 text-center text-white">
+            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-black mb-6 text-shadow leading-tight">
+                AI赋能<br>传统皮影戏的<span class="text-shadowPlay-light">数字新生</span>
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] mb-8 max-w-3xl mx-auto">
+                当千年光影艺术遇上前沿人工智能，传统与现代碰撞出全新的文化表达
+            </p>
+            <a href="#ai-integration" class="inline-block bg-shadowPlay-accent hover:bg-shadowPlay-accent/90 text-white px-8 py-3 rounded-full text-xl transition-all transform hover:scale-105">
+                探索融合之旅 <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+        <!-- 向下滚动提示 -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#culture" class="text-white text-2xl">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
         </div>
     </section>
 
-    <!-- 核心内容区 -->
-    <div class="container">
-        <!-- AI应用场景 -->
-        <section id="applications">
-            <h2 class="section-title">AI助力京剧推广的核心场景</h2>
-            <div class="ai-applications">
-                <!-- 卡片1：AI数字角儿 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://img1.baidu.com/it/u=2667177229,3070530791&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="AI数字京剧演员">
-                    </div>
-                    <div class="card-content">
-                        <h3>AI数字京剧演员</h3>
-                        <p>利用AI生成高精度的数字京剧角色，复刻经典唱腔、身段和妆容，打造永不落幕的线上京剧演出，突破时间和空间限制，让观众随时随地欣赏京剧表演。</p>
+    <!-- 皮影文化介绍 -->
+    <section id="culture" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">千年光影 皮影之美</h2>
+                <div class="w-20 h-1 bg-shadowPlay-medium mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://picsum.photos/id/1040/800/600" alt="传统皮影戏" class="w-full h-auto rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-shadowPlay-accent text-white p-4 rounded-lg shadow-lg max-w-xs">
+                        <p class="font-bold">皮影戏，又称"影子戏"或"灯影戏"，是中国民间古老的传统艺术</p>
                     </div>
                 </div>
-
-                <!-- 卡片2：智能唱腔教学 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://img2.baidu.com/it/u=1722224590,3420217118&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="AI智能唱腔教学">
-                    </div>
-                    <div class="card-content">
-                        <h3>AI智能唱腔教学</h3>
-                        <p>通过语音识别和音准分析技术，为京剧学习者提供实时的唱腔纠错、节奏指导，生成个性化的学习计划，降低入门门槛，让更多人轻松学习京剧。</p>
-                    </div>
-                </div>
-
-                <!-- 卡片3：京剧内容个性化推荐 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://img0.baidu.com/it/u=3070722600,3865562077&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="AI个性化推荐">
-                    </div>
-                    <div class="card-content">
-                        <h3>个性化内容推荐</h3>
-                        <p>基于用户的浏览习惯、兴趣偏好，AI算法精准推荐适配的京剧选段、科普内容、周边文创，精准触达不同年龄、圈层的用户，提升京剧内容的传播效率。</p>
-                    </div>
-                </div>
-
-                <!-- 卡片4：AI京剧创新创作 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="https://img2.baidu.com/it/u=207260031,3070201448&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="AI京剧创作">
-                    </div>
-                    <div class="card-content">
-                        <h3>AI辅助创新创作</h3>
-                        <p>AI结合传统京剧的韵律、板式、剧本结构，辅助创作者生成符合京剧美学的新剧本、新唱腔，融合现代元素，打造年轻化、大众化的京剧新作品。</p>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-shadowPlay-medium">文化传承</h3>
+                    <p class="mb-4 text-lg">
+                        皮影戏始于西汉，兴于唐朝，盛于清代，元代时期传至西亚和欧洲，距今已有两千多年的历史，是世界级非物质文化遗产。
+                    </p>
+                    <p class="mb-4 text-lg">
+                        它综合了戏剧、音乐、美术等多种艺术形式，通过灯光将兽皮或纸板做成的人物剪影照射在白色幕布上表演故事，具有独特的艺术魅力。
+                    </p>
+                    <p class="mb-6 text-lg">
+                        然而，在现代社会，传统皮影戏面临着传承人老龄化、创作成本高、受众群体缩小等挑战。
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-shadowPlay-light/20 p-4 rounded-lg flex-1">
+                            <i class="fa-solid fa-award text-3xl text-shadowPlay-medium mb-2"></i>
+                            <h4 class="font-bold mb-1">非遗瑰宝</h4>
+                            <p class="text-sm">世界级非物质文化遗产</p>
+                        </div>
+                        <div class="bg-shadowPlay-light/20 p-4 rounded-lg flex-1">
+                            <i class="fa-solid fa-palette text-3xl text-shadowPlay-medium mb-2"></i>
+                            <h4 class="font-bold mb-1">艺术融合</h4>
+                            <p class="text-sm">集多种艺术形式于一体</p>
+                        </div>
+                        <div class="bg-shadowPlay-light/20 p-4 rounded-lg flex-1">
+                            <i class="fa-solid fa-users text-3xl text-shadowPlay-medium mb-2"></i>
+                            <h4 class="font-bold mb-1">传承挑战</h4>
+                            <p class="text-sm">亟待创新与年轻化</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 核心优势 -->
-        <section id="advantages" class="advantages">
-            <h2 class="section-title">AI推广京剧的核心优势</h2>
-            <div class="advantage-list">
-                <div class="advantage-item">
-                    <i class="fas fa-users"></i>
-                    <h4>扩大受众范围</h4>
-                    <p>打破年龄、地域限制，让年轻人、海外用户更容易接触和接受京剧文化</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-rocket"></i>
-                    <h4>提升传播效率</h4>
-                    <p>自动化内容生产、精准推荐，大幅降低推广成本，提升传播覆盖面</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>激发创新活力</h4>
-                    <p>AI技术为京剧注入现代元素，实现传统与科技的融合创新</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-book"></i>
-                    <h4>数字化保护传承</h4>
-                    <p>高精度数字化留存京剧经典剧目、表演技法，实现文化遗产永久保存</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 关于我们 -->
-        <section id="about">
-            <h2 class="section-title">关于我们</h2>
-            <div style="background-color: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
-                    我们致力于通过人工智能技术赋能传统文化传承，聚焦京剧这一国粹艺术的推广与创新。团队由京剧艺术家、AI技术专家、文化传播从业者组成，旨在用科技的力量打破传统艺术的传播壁垒，让京剧走出剧场、走进大众生活，实现传统文化的活态传承与创新发展。
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-top: 1rem;">
-                    我们相信，科技与传统的融合不是对经典的颠覆，而是为京剧注入新的生命力，让这门古老的艺术在数字时代焕发新的光彩。
+    <!-- AI融合区 -->
+    <section id="ai-integration" class="py-20 bg-shadowPlay-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">AI × 皮影 创新融合</h2>
+                <div class="w-20 h-1 bg-shadowPlay-light mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg text-shadowPlay-light">
+                    人工智能技术为传统皮影戏注入新的生命力，从创作到表演全方位赋能
                 </p>
             </div>
-        </section>
-    </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AI应用1 -->
+                <div class="bg-shadowPlay-medium/30 rounded-xl p-8 hover:bg-shadowPlay-medium/50 transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-shadowPlay-ai/80 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-robot text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">智能动作生成</h3>
+                    <p class="text-shadowPlay-light mb-4">
+                        通过AI算法分析传统皮影表演的动作规律，自动生成流畅的皮影人物动作，大大降低创作成本。
+                    </p>
+                    <ul class="text-shadowPlay-light space-y-2">
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 动作捕捉与数字化</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 智能关键帧生成</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 动作风格迁移</li>
+                    </ul>
+                </div>
+
+                <!-- AI应用2 -->
+                <div class="bg-shadowPlay-medium/30 rounded-xl p-8 hover:bg-shadowPlay-medium/50 transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-shadowPlay-ai/80 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-brain text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">内容智能创作</h3>
+                    <p class="text-shadowPlay-light mb-4">
+                        基于自然语言处理技术，AI可根据文字脚本自动生成皮影戏的分镜和表演方案。
+                    </p>
+                    <ul class="text-shadowPlay-light space-y-2">
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 剧本智能解析</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 角色自动分配</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 场景智能生成</li>
+                    </ul>
+                </div>
+
+                <!-- AI应用3 -->
+                <div class="bg-shadowPlay-medium/30 rounded-xl p-8 hover:bg-shadowPlay-medium/50 transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-shadowPlay-ai/80 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-vr-cardboard text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">沉浸式交互体验</h3>
+                    <p class="text-shadowPlay-light mb-4">
+                        结合AI和AR/VR技术，打造沉浸式的皮影戏体验，观众可实时互动，参与剧情发展。
+                    </p>
+                    <ul class="text-shadowPlay-light space-y-2">
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 实时动作识别</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 智能剧情分支</li>
+                        <li><i class="fa-solid fa-check text-shadowPlay-accent mr-2"></i> 多模态交互体验</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-shadowPlay-medium/20 rounded-xl p-8 border border-shadowPlay-light/30">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-4">数字传承与保护</h3>
+                        <p class="text-shadowPlay-light mb-4">
+                            AI技术还可用于皮影戏的数字化保护，通过图像识别和3D重建，将珍贵的皮影文物和表演资料进行数字化存档，
+                            建立完整的数字博物馆，让传统文化得以永久保存和广泛传播。
+                        </p>
+                        <p class="text-shadowPlay-light">
+                            同时，AI推荐算法可以精准匹配不同受众的喜好，让皮影戏触达更多年轻群体，实现传统文化的活态传承。
+                        </p>
+                    </div>
+                    <div class="md:w-1/3">
+                        <img src="https://picsum.photos/id/180/600/400" alt="数字传承" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例展示区 -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">融合案例展示</h2>
+                <div class="w-20 h-1 bg-shadowPlay-medium mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 案例1 -->
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1047/800/500" alt="AI皮影动画" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute inset-0 bg-shadowPlay-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-shadowPlay-dark px-4 py-2 rounded-full font-bold">
+                                查看详情 <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI生成皮影动画</h3>
+                        <p class="text-gray-600">
+                            基于深度学习的皮影动画自动生成系统，输入文字即可生成完整的皮影动画短片
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 案例2 -->
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1058/800/500" alt="智能交互皮影" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute inset-0 bg-shadowPlay-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-shadowPlay-dark px-4 py-2 rounded-full font-bold">
+                                查看详情 <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">智能交互皮影装置</h3>
+                        <p class="text-gray-600">
+                            结合计算机视觉的互动皮影装置，观众可通过手势控制皮影人物的动作
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 案例3 -->
+                <div class="rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1060/800/500" alt="数字皮影博物馆" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute inset-0 bg-shadowPlay-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-shadowPlay-dark px-4 py-2 rounded-full font-bold">
+                                查看详情 <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">数字皮影博物馆</h3>
+                        <p class="text-gray-600">
+                            AI驱动的数字皮影博物馆，可智能识别和分类皮影文物，提供沉浸式浏览体验
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动体验区 -->
+    <section id="experience" class="py-20 bg-shadowPlay-light/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">互动体验</h2>
+                <div class="w-20 h-1 bg-shadowPlay-medium mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg text-gray-700">
+                    体验AI如何为皮影人物赋予生动的动作
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-shadowPlay-medium">AI皮影动作生成</h3>
+                        <p class="mb-6 text-gray-700">
+                            选择不同的动作类型，AI会为皮影人物生成相应的动画效果
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <label class="block mb-2 font-bold text-gray-800">选择动作类型</label>
+                                <select id="actionType" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-shadowPlay-ai">
+                                    <option value="walk">行走</option>
+                                    <option value="dance">舞蹈</option>
+                                    <option value="wave">挥手</option>
+                                    <option value="bow">鞠躬</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block mb-2 font-bold text-gray-800">动作速度</label>
+                                <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" class="w-full">
+                                <div class="flex justify-between text-sm text-gray-500">
+                                    <span>慢速</span>
+                                    <span id="speedValue">1.0x</span>
+                                    <span>快速</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="generateBtn" class="w-full bg-shadowPlay-accent hover:bg-shadowPlay-accent/90 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                            <i class="fa-solid fa-magic mr-2"></i> 生成动作
+                        </button>
+                    </div>
+                    
+                    <div class="bg-shadowPlay-dark p-8 flex items-center justify-center relative">
+                        <div class="w-full h-80 relative overflow-hidden rounded-lg bg-black/30">
+                            <!-- 皮影背景 -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-100 to-orange-100 opacity-20"></div>
+                            <!-- 皮影人物 -->
+                            <div id="shadowFigure" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-60">
+                                <img src="https://picsum.photos/id/1077/200/300" alt="皮影人物" class="w-full h-full object-contain filter brightness-0 invert sepia-100 hue-rotate-30deg">
+                            </div>
+                            <!-- 动作提示 -->
+                            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black/50 px-4 py-2 rounded-lg">
+                                点击"生成动作"按钮体验
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 页脚 -->
-    <footer>
-        <div class="footer-content">
-            <h3>AI × 京剧 - 让国粹走向未来</h3>
-            <p>© 2025 AI京剧推广项目 版权所有</p>
+    <footer class="bg-shadowPlay-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-masks-theater"></i> 光影新生
+                    </h3>
+                    <p class="text-shadowPlay-light mb-4">
+                        让传统皮影艺术在AI时代焕发新生
+                    </p>
+                    <div class="flex gap-4 text-xl">
+                        <a href="#" class="hover:text-shadowPlay-light transition-colors"><i class="fa-brands fa-weixin"></i></a>
+                        <a href="#" class="hover:text-shadowPlay-light transition-colors"><i class="fa-brands fa-weibo"></i></a>
+                        <a href="#" class="hover:text-shadowPlay-light transition-colors"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2 text-shadowPlay-light">
+                        <li><a href="#home" class="hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#culture" class="hover:text-white transition-colors">皮影文化</a></li>
+                        <li><a href="#ai-integration" class="hover:text-white transition-colors">AI融合</a></li>
+                        <li><a href="#cases" class="hover:text-white transition-colors">案例展示</a></li>
+                        <li><a href="#experience" class="hover:text-white transition-colors">互动体验</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">相关资源</h3>
+                    <ul class="space-y-2 text-shadowPlay-light">
+                        <li><a href="#" class="hover:text-white transition-colors">皮影文化研究</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">AI艺术应用</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">数字文化保护</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">非遗创新案例</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2 text-shadowPlay-light">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>contact@shadowai.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+86 123 4567 8910</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>北京市海淀区文化创新园</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-shadowPlay-medium/30 text-center text-shadowPlay-light">
+                <p>© 2025 光影新生 - AI与传统皮影戏的融合 版权所有</p>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-lg');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+
+        // 速度滑块显示
+        const speedSlider = document.getElementById('speed');
+        const speedValue = document.getElementById('speedValue');
+        
+        speedSlider.addEventListener('input', () => {
+            speedValue.textContent = `${speedSlider.value}x`;
+        });
+
+        // AI动作生成交互
+        const generateBtn = document.getElementById('generateBtn');
+        const shadowFigure = document.getElementById('shadowFigure');
+        const actionType = document.getElementById('actionType');
+        
+        generateBtn.addEventListener('click', () => {
+            // 重置动画
+            shadowFigure.classList.remove('animate-walk', 'animate-dance', 'animate-wave', 'animate-bow');
+            
+            // 添加短暂延迟后添加新动画
+            setTimeout(() => {
+                const speed = speedSlider.value;
+                shadowFigure.style.animationDuration = `${2 / speed}s`;
+                
+                // 根据选择的动作添加对应的动画类
+                switch(actionType.value) {
+                    case 'walk':
+                        shadowFigure.classList.add('animate-walk');
+                        break;
+                    case 'dance':
+                        shadowFigure.classList.add('animate-dance');
+                        break;
+                    case 'wave':
+                        shadowFigure.classList.add('animate-wave');
+                        break;
+                    case 'bow':
+                        shadowFigure.classList.add('animate-bow');
+                        break;
+                }
+                
+                // 显示动作提示
+                const tip = shadowFigure.parentElement.querySelector('div:last-child');
+                tip.textContent = `正在播放：${actionType.options[actionType.selectedIndex].text} (速度: ${speed}x)`;
+            }, 100);
+        });
+
+        // 定义皮影动画样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes walk {
+                0% { transform: translate(-50%, -50%) rotate(0deg); }
+                50% { transform: translate(-50%, -50%) rotate(5deg); }
+                100% { transform: translate(-50%, -50%) rotate(0deg); }
+            }
+            @keyframes dance {
+                0% { transform: translate(-50%, -50%) scale(1); }
+                50% { transform: translate(-50%, -50%) scale(1.1) rotate(10deg); }
+                100% { transform: translate(-50%, -50%) scale(1); }
+            }
+            @keyframes wave {
+                0% { transform: translate(-50%, -50%) rotate(0deg); }
+                25% { transform: translate(-50%, -50%) rotate(15deg); }
+                50% { transform: translate(-50%, -50%) rotate(0deg); }
+                75% { transform: translate(-50%, -50%) rotate(-15deg); }
+                100% { transform: translate(-50%, -50%) rotate(0deg); }
+            }
+            @keyframes bow {
+                0% { transform: translate(-50%, -50%) rotate(0deg); }
+                50% { transform: translate(-50%, -40%) rotate(0deg) scaleY(0.9); }
+                100% { transform: translate(-50%, -50%) rotate(0deg); }
+            }
+            .animate-walk { animation: walk infinite; }
+            .animate-dance { animation: dance infinite; }
+            .animate-wave { animation: wave infinite; }
+            .animate-bow { animation: bow infinite; }
+        `;
+        document.head.appendChild(style);
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.replace('fa-times', 'fa-bars');
+                
+                // 滚动到目标位置
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
